@@ -5,7 +5,7 @@ import { Employee } from '../models/employee.model';
   providedIn: 'root',
 })
 export class EmployeeService {
-    private listEmployees: Employee[] =[
+    private listEmployees: Employee[] = [
       {
       id: 1,
       name: 'Mark',
@@ -40,11 +40,15 @@ export class EmployeeService {
       photoPath: 'assets/images/john.png',
     }];
 
-    getEmployees(): Employee[]{
+    getEmployees(): Employee[] {
       return this.listEmployees;
     }
 
-    save(employee: Employee){
+    getEmployee(id: number): Employee {
+      return this.listEmployees.find( e => e.id === id);
+    }
+
+    save(employee: Employee) {
       this.listEmployees.push(employee);
     }
 }
