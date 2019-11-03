@@ -13,7 +13,7 @@ export class DisplayEmployeeComponent implements OnInit {
    @Input() employee: Employee;
   private selectedEmployeeId: number;
 
-   constructor(private _route:ActivatedRoute) { }
+   constructor(private _route: ActivatedRoute) { }
 
   ngOnInit() {
        this.selectedEmployeeId =  +this._route.snapshot.paramMap.get('id');
